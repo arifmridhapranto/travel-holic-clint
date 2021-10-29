@@ -1,9 +1,14 @@
 import React from "react";
+import ExtraSection from "../components/ExtraSection/ExtraSection";
+import Banner from "../components/Header/Banner";
+import Plans from "../components/Plans/Plans";
 
 const Home = () => {
   return (
     <div>
-      <h1>Welcome to Pranto Mridha!!!</h1>
+      <Banner></Banner>
+      <ExtraSection></ExtraSection>
+      <Plans></Plans>
     </div>
   );
 };
