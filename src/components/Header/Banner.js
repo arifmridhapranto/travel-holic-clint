@@ -12,7 +12,7 @@ const Banner = () => {
             whales in sixth dont seas dron image so fish all tree meat dont
             there
           </p>
-          <button className='btn btn-primary'>Get Started</button>
+          <button className='btn bg-color2 text-white'>Get Started</button>
         </div>
         <div className='col-lg-6'>
           <img

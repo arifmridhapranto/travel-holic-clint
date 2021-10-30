@@ -32,11 +32,15 @@
     transform: rotate(360deg);
   }
 }
-
-.text-d-none {
-  text-decoration: none;
+.bg-color1 {
+  background-color: #7676ff;
 }
-
-NavLink {
-  text-decoration: none;
+.bg-color2 {
+  background-color: #6059f6;
+}
+.text-color1 {
+  color: #6059f6;
+}
+.text-color2 {
+  color: #7676ff;
 }
