@@ -5,28 +5,30 @@ import Table from "react-bootstrap/Table";
 import Button from "react-bootstrap/Button";
 
 const MyBooking = () => {
-  const { user } = useAuth();
   const [myOrders, setMyOrders] = useState([]);
   const [loading, setLoading] = useState(false);
+  const { user } = useAuth();
   useEffect(() => {
     fetch(`https://vast-beach-32401.herokuapp.com/myorders/${user.email}`)
       .then((res) => res.json())
       .then((data) => setMyOrders(data));
-  }, [loading]);
+  }, [user]);
 
   const handleDeleteOrder = (id) => {
-    alert("are you sure to cancel this trip");
     fetch(`https://vast-beach-32401.herokuapp.com/deleteorders/${id}`, {
       method: "DELETE",
     })
       .then((res) => res.json())
       .then((data) => {
         if (data.deletedCount > 0) {
+          alert(" your trip canceled");
           setLoading(true);
+        } else {
+          setLoading(false);
         }
       });
   };
-
+  console.log(loading);
   return (
     <div className='container'>
       <ExtraHeader>

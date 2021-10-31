@@ -17,7 +17,7 @@ const ManageOrders = () => {
     })
       .then((res) => res.json())
       .then((data) => {
-        if (data.deletedCount) {
+        if (data.deletedCount > 0) {
           setLoading(true);
         }
       });
