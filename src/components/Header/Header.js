@@ -1,10 +1,13 @@
 import React from "react";
-import { Button, Container, Nav, Navbar } from "react-bootstrap";
-import { NavLink } from "react-router-dom";
+import { Button, Container, Nav, Navbar, NavDropdown } from "react-bootstrap";
+import { Link, NavLink } from "react-router-dom";
+import useAuth from "../../hooks/useAuth";
 
 const Header = () => {
+  const { user, logOut } = useAuth();
+
   return (
-    <div className=''>
+    <div className='py-2'>
       <Navbar bg='light' variant='light'>
         <Container className='d-flex align-items-center justify-content-between '>
           <NavLink to='/' className='text-decoration-none'>
@@ -31,21 +34,41 @@ const Header = () => {
               className='px-2 text-decoration-none text-color1'>
               Contact
             </NavLink>
-
-            <div>
-              <Button>LogOut</Button>
-              <NavLink to='' className='px-2 text-decoration-none text-color1'>
-                Dashboard
-              </NavLink>
-              <NavLink
-                to='/addplan'
-                className='px-2 text-decoration-none text-color1'>
-                Add Plan
-              </NavLink>
-
-              <Button>Log In</Button>
-              <Button>Sign Up</Button>
-            </div>
+            {user.email ? (
+              <div className='d-flex'>
+                <p className='inline'>{user?.displayName}</p>
+                <NavDropdown title='dashboard' id='navbarScrollingDropdown'>
+                  <NavDropdown.Item>
+                    <NavLink
+                      to='/mybookings'
+                      className='px-2 text-decoration-none text-color1'>
+                      My Bookings
+                    </NavLink>
+                  </NavDropdown.Item>
+                  <NavDropdown.Item>
+                    <NavLink
+                      to='/manageorders'
+                      className='px-2 text-decoration-none text-color1'>
+                      Manage All Bookings
+                    </NavLink>
+                  </NavDropdown.Item>
+                  <NavDropdown.Item>
+                    <NavLink
+                      to='/addplan'
+                      className='px-2 text-decoration-none text-color1'>
+                      Add Plan
+                    </NavLink>
+                  </NavDropdown.Item>
+                  <NavDropdown.Item>
+                    <Button onClick={logOut}>LogOut</Button>
+                  </NavDropdown.Item>
+                </NavDropdown>
+              </div>
+            ) : (
+              <Link to='/login'>
+                <Button variant='primary'>Sign In</Button>
+              </Link>
+            )}
           </Nav>
         </Container>
       </Navbar>
