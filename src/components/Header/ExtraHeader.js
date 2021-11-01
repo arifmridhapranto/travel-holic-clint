@@ -5,10 +5,10 @@ const ExtraHeader = ({ children }) => {
     <div>
       <div className=''>
         <div className='row'>
-          <div className='col-lg-6 d-flex flex-column justify-content-center'>
+          <div className='col-lg-6 col-12 d-flex flex-column justify-content-center'>
             {children}
           </div>
-          <div className='col-lg-6 d-flex justify-content-end'>
+          <div className='col-lg-6 col-12 d-flex justify-content-end'>
             <img
               src={"https://i.ibb.co/s1HpdwW/asset-1.webp"}
               alt=''

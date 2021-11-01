@@ -5,7 +5,7 @@ import FooterItem3 from "./FooterItem3";
 
 const Footer = () => {
   return (
-    <div className='container d-flex justify-content-between bg-color1 mt-5 pt-5'>
+    <div className='container d-flex flex-column justify-content-lg-between bg-color1 mt-5 pt-5'>
       <FooterItem1></FooterItem1>
       <FooterItem2></FooterItem2>
       <FooterItem3></FooterItem3>

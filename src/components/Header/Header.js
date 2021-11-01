@@ -9,7 +9,7 @@ const Header = () => {
   return (
     <div className='py-2'>
       <Navbar bg='light' variant='light'>
-        <Container className='d-flex align-items-center justify-content-between '>
+        <Container className='d-flex flex-lg-row align-items-center justify-content-between flex-column'>
           <NavLink to='/' className='text-decoration-none'>
             <h3 className='text-color1'>TRAVELHOLIC</h3>
           </NavLink>

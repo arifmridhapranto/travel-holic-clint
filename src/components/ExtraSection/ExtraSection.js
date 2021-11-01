@@ -27,7 +27,7 @@ const ExtraSection = () => {
   ];
 
   return (
-    <div className='container d-flex justify-content-between mt-5'>
+    <div className='container d-flex flex-column flex-lg-row justify-content-lg-between mt-5'>
       {extra.map((ext) => (
         <ExtraItem key={ext.id} ext={ext}></ExtraItem>
       ))}

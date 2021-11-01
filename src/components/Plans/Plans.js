@@ -11,13 +11,13 @@ const Plans = () => {
       .then((data) => setPlans(data));
   }, []);
   return (
-    <div className='container '>
+    <div className='container'>
       <div className='text-center mt-5'>
         <img src={"https://i.ibb.co/Zf39GCg/asset-2.webp"} alt='' />
         <h1>Our Plans</h1>
         <p>Fowl have fruit moveth male they are that place you will lesser</p>
       </div>
-      <div className=''>
+      <div className='text-center text-lg-left'>
         {plans.length === 0 ? (
           <div className=' d-flex justify-content-center align-items-center'>
             <Spinner animation='border' variant='dark' />
