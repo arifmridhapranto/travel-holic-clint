@@ -23,8 +23,6 @@ const MyBooking = () => {
         if (data.deletedCount > 0) {
           alert(" your trip canceled");
           setLoading(true);
-        } else {
-          setLoading(false);
         }
       });
   };

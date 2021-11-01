@@ -2,7 +2,7 @@ import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import "./App.css";
 import Footer from "./components/Footer/Footer";
 import Header from "./components/Header/Header";
-import Plans from "./components/Plans/Plans";
+
 import SinglePlan from "./components/SinglePlan/SinglePlan";
 import AuthProvider from "./contextApi/AuthProvider";
 import AboutUs from "./pages/AboutUs";
@@ -15,6 +15,7 @@ import PlanPost from "./pages/PlanPost";
 import PrivateRoute from "./PrivateRoute/PrivateRoute";
 import MyBooking from "./pages/MyBooking";
 import ManageOrders from "./pages/ManageOrders";
+import OurPlans from "./pages/OurPlans";
 
 function App() {
   return (
@@ -49,7 +50,7 @@ function App() {
             </PrivateRoute>
             <PrivateRoute exact path='/plans'>
               <Header></Header>
-              <Plans></Plans>
+              <OurPlans></OurPlans>
               <Footer></Footer>
             </PrivateRoute>
             <PrivateRoute exact path='/singleplan/:id'>

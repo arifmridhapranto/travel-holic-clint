@@ -11,17 +11,33 @@ const ManageOrders = () => {
       .then((res) => res.json())
       .then((data) => setAllOrders(data));
   }, [loading]);
+
   const handleDeleteOrder = (id) => {
     fetch(`https://vast-beach-32401.herokuapp.com/deleteorders/${id}`, {
       method: "DELETE",
     })
       .then((res) => res.json())
       .then((data) => {
-        if (data.deletedCount > 0) {
+        if (data.insertedId) {
+          alert("your order has been deleted");
           setLoading(true);
         }
       });
   };
+  const handleUpdateOrder = (id) => {
+    const url = `https://vast-beach-32401.herokuapp.com/updatedorder/${id}`;
+    const status = {
+      status: "Approved",
+    };
+    fetch(url, {
+      method: "PUT",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(status),
+    })
+      .then((res) => res.json())
+      .then((data) => console.log(data));
+  };
+
   return (
     <div className='container'>
       <ExtraHeader>
@@ -48,7 +64,9 @@ const ManageOrders = () => {
                 <td>{orders.email}</td>
                 <td>{orders.status}</td>
                 <td>
-                  <Button>Update Status</Button>
+                  <Button onClick={() => handleUpdateOrder(orders._id)}>
+                    Update Status
+                  </Button>
                 </td>
                 <td>
                   <Button onClick={() => handleDeleteOrder(orders._id)}>

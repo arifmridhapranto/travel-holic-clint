@@ -37,6 +37,7 @@ const Header = () => {
             {user.email ? (
               <div className='d-flex'>
                 <p className='inline'>{user?.displayName}</p>
+
                 <NavDropdown title='dashboard' id='navbarScrollingDropdown'>
                   <NavDropdown.Item>
                     <NavLink
